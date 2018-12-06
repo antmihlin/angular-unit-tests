@@ -1,11 +1,26 @@
 import { TestBed, async } from '@angular/core/testing';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { HttpClientModule, HttpClient }    from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+
 import { AppComponent } from './app.component';
+import { CountryStatsComponent } from './country-stats/country-stats.component';
+import { IndicatorService } from './indicator.service';
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+		CountryStatsComponent
       ],
+	imports: [
+	  BrowserModule,
+	  HttpClientModule,
+	  HttpModule,
+	],
+	providers: [IndicatorService]
     }).compileComponents();
   }));
   it('should create the app', async(() => {
@@ -13,6 +28,7 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
+  /*
   it(`should have as title 'app'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
@@ -24,4 +40,5 @@ describe('AppComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain('Welcome to app!');
   }));
+  */
 });
