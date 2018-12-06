@@ -9,7 +9,7 @@ import {IndicatorService} from '../indicator.service';
 })
 export class CountryStatsComponent implements OnInit {
 
-	gdp: Array<any>;
+	gdp: Array<any> = [];
 
   constructor(
 	private _indicator:IndicatorService

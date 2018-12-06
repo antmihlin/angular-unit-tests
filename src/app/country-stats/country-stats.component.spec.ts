@@ -27,4 +27,9 @@ describe('CountryStatsComponent', () => {
 		const component = fixture.debugElement.componentInstance;
 		expect(component).toBeTruthy();
 	});
+	it('gdp should be an Array', () => {
+		const fixture = TestBed.createComponent(CountryStatsComponent);
+		const component = fixture.debugElement.componentInstance;
+		expect( Array.isArray( component.gdp ) ).toBeTruthy();
+	});
 });
